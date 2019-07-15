@@ -6,7 +6,12 @@ function readyNow(){
     $( '#sayHelloButton' ).on('click', sayHello);
     $('h2').mouseenter(h2MouseEnter);
     $('h2').mouseleave(h2MouseLeave);
-} 
+    $('.clicker').on('click', changeTextColor);
+} //end readyNow
+
+function changeTextColor () {
+    $ (this).css('color', 'blue');
+} //end changeTextColor
 
 function h2MouseEnter() {
     $( this ).css( 'background-color', 'red');

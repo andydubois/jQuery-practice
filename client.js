@@ -5,22 +5,29 @@ function readyNow(){
     console.log('jq');
     $( '#sayHelloButton' ).on('click', sayHello);
     $('h2').mouseenter(h2MouseEnter);
-    $('h2').mouseleave(h2MouseLeave)
+    $('h2').mouseleave(h2MouseLeave);
 } 
 
 function h2MouseEnter() {
     $( this ).css( 'background-color', 'red');
-} 
+}  //end h2MouseEnter
 
 function h2MouseLeave() {
     $( this ).css( 'background-color', 'white');
-}
+} //end h2MouseLeave
 
 function sayHello() {
     //target input element by ID
     //get the value of the text input
     let outputText = 'Hello, ' + $('#nameInput').val();
     console.log(outputText);
+    //display out text on DOM
+    //targetthe output element
+    let outputEl = $( '#helloOut' );
+    //empty it
+    outputEl.empty();
+    //append the output text in it
+    outputEl.append( outputText );
     //empty the input
     $('#nameInput' ).val('');
     //end sayHello
